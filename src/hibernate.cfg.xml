@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/galu?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <mapping resource="modelos/Estados.hbm.xml"/>
+    <mapping resource="modelos/Articulo.hbm.xml"/>
+    <mapping resource="modelos/LineaPedidoP.hbm.xml"/>
+    <mapping resource="modelos/PedidoC.hbm.xml"/>
+    <mapping resource="modelos/LineaPedidoC.hbm.xml"/>
+    <mapping resource="modelos/Empresa.hbm.xml"/>
+    <mapping resource="modelos/EstadoPed.hbm.xml"/>
+    <mapping resource="modelos/PedidoP.hbm.xml"/>
+    <mapping resource="modelos/Tarifa.hbm.xml"/>
+    <mapping resource="modelos/Contacto.hbm.xml"/>
+    <mapping resource="modelos/Cliente.hbm.xml"/>
+    <mapping resource="modelos/Proveedor.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

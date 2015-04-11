@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.LineaPedidoC" table="linea_pedido_c" catalog="galu" optimistic-lock="version">
+        <id name="linea" type="string">
+            <column name="Linea" length="4" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="articulo" class="modelos.Articulo" fetch="select">
+            <column name="ARTICULO_idARTICULO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pedidoC" class="modelos.PedidoC" fetch="select">
+            <column name="PEDIDO_C_idPEDIDO_C" not-null="true" />
+        </many-to-one>
+        <property name="cantidad" type="int">
+            <column name="Cantidad" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.Proveedor" table="proveedor" catalog="galu" optimistic-lock="version">
+        <id name="idProveedor" type="java.lang.Integer">
+            <column name="idPROVEEDOR" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="estados" class="modelos.Estados" fetch="select">
+            <column name="ESTADOS_idESTADOS" not-null="true" />
+        </many-to-one>
+        <property name="razonSocial" type="string">
+            <column name="RazonSocial" length="45" not-null="true" />
+        </property>
+        <property name="nif" type="string">
+            <column name="NIF" length="9" not-null="true" />
+        </property>
+        <property name="nifR" type="string">
+            <column name="NIF_R" length="9" />
+        </property>
+        <property name="domicilio" type="string">
+            <column name="Domicilio" length="45" not-null="true" />
+        </property>
+        <property name="cp" type="string">
+            <column name="CP" length="5" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="Poblacion" length="45" not-null="true" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="Provincia" length="45" />
+        </property>
+        <property name="pais" type="string">
+            <column name="Pais" length="45" />
+        </property>
+        <property name="fechaA" type="date">
+            <column name="Fecha_A" length="10" not-null="true" />
+        </property>
+        <set name="pedidoPs" table="pedido_p" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PROVEEDOR_idPROVEEDOR" not-null="true" />
+            </key>
+            <one-to-many class="modelos.PedidoP" />
+        </set>
+    </class>
+</hibernate-mapping>

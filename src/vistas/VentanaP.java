@@ -1,4 +1,8 @@
-package GUI;
+package vistas;
+
+import java.sql.Connection;
+import conexiones.DBConnection;
+import java.awt.CardLayout;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +22,8 @@ public class VentanaP extends javax.swing.JFrame {
      */
     public VentanaP() {
         initComponents();
+        Connection con = DBConnection.getConnection();
+        
     }
 
     /**
@@ -29,6 +35,21 @@ public class VentanaP extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelPrincipal = new javax.swing.JPanel();
+        jPanelClientes = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jPanelArticulos = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanelLista = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanelGeneral = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanelVentas = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanelCompras = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanelStocks = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuEmpresa = new javax.swing.JMenu();
         jMenuItemAbrirE = new javax.swing.JMenuItem();
@@ -58,6 +79,152 @@ public class VentanaP extends javax.swing.JFrame {
         jMenuTraza = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanelPrincipal.setLayout(new java.awt.CardLayout());
+
+        jButton1.setText("jButton1");
+
+        javax.swing.GroupLayout jPanelClientesLayout = new javax.swing.GroupLayout(jPanelClientes);
+        jPanelClientes.setLayout(jPanelClientesLayout);
+        jPanelClientesLayout.setHorizontalGroup(
+            jPanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelClientesLayout.createSequentialGroup()
+                .addGap(395, 395, 395)
+                .addComponent(jButton1)
+                .addContainerGap(848, Short.MAX_VALUE))
+        );
+        jPanelClientesLayout.setVerticalGroup(
+            jPanelClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelClientesLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jButton1)
+                .addContainerGap(441, Short.MAX_VALUE))
+        );
+
+        jPanelPrincipal.add(jPanelClientes, "card3");
+
+        jLabel1.setFont(new java.awt.Font("SketchFlow Print", 3, 36)); // NOI18N
+        jLabel1.setText("Lista");
+
+        javax.swing.GroupLayout jPanelListaLayout = new javax.swing.GroupLayout(jPanelLista);
+        jPanelLista.setLayout(jPanelListaLayout);
+        jPanelListaLayout.setHorizontalGroup(
+            jPanelListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1181, Short.MAX_VALUE))
+        );
+        jPanelListaLayout.setVerticalGroup(
+            jPanelListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListaLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1)
+                .addContainerGap(410, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Lista", jPanelLista);
+
+        jLabel2.setFont(new java.awt.Font("SketchFlow Print", 3, 36)); // NOI18N
+        jLabel2.setText("General");
+
+        javax.swing.GroupLayout jPanelGeneralLayout = new javax.swing.GroupLayout(jPanelGeneral);
+        jPanelGeneral.setLayout(jPanelGeneralLayout);
+        jPanelGeneralLayout.setHorizontalGroup(
+            jPanelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGeneralLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1124, Short.MAX_VALUE))
+        );
+        jPanelGeneralLayout.setVerticalGroup(
+            jPanelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelGeneralLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel2)
+                .addContainerGap(410, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("General", jPanelGeneral);
+
+        jLabel3.setFont(new java.awt.Font("SketchFlow Print", 3, 36)); // NOI18N
+        jLabel3.setText("Ventas");
+
+        javax.swing.GroupLayout jPanelVentasLayout = new javax.swing.GroupLayout(jPanelVentas);
+        jPanelVentas.setLayout(jPanelVentasLayout);
+        jPanelVentasLayout.setHorizontalGroup(
+            jPanelVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVentasLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1150, Short.MAX_VALUE))
+        );
+        jPanelVentasLayout.setVerticalGroup(
+            jPanelVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVentasLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel3)
+                .addContainerGap(410, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Ventas", jPanelVentas);
+
+        jLabel4.setFont(new java.awt.Font("SketchFlow Print", 3, 36)); // NOI18N
+        jLabel4.setText("Compras");
+
+        javax.swing.GroupLayout jPanelComprasLayout = new javax.swing.GroupLayout(jPanelCompras);
+        jPanelCompras.setLayout(jPanelComprasLayout);
+        jPanelComprasLayout.setHorizontalGroup(
+            jPanelComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelComprasLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1095, Short.MAX_VALUE))
+        );
+        jPanelComprasLayout.setVerticalGroup(
+            jPanelComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelComprasLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel4)
+                .addContainerGap(410, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Compras", jPanelCompras);
+
+        jLabel5.setFont(new java.awt.Font("SketchFlow Print", 3, 36)); // NOI18N
+        jLabel5.setText("Stocks");
+
+        javax.swing.GroupLayout jPanelStocksLayout = new javax.swing.GroupLayout(jPanelStocks);
+        jPanelStocks.setLayout(jPanelStocksLayout);
+        jPanelStocksLayout.setHorizontalGroup(
+            jPanelStocksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStocksLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1147, Short.MAX_VALUE))
+        );
+        jPanelStocksLayout.setVerticalGroup(
+            jPanelStocksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStocksLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel5)
+                .addContainerGap(410, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Stocks", jPanelStocks);
+
+        javax.swing.GroupLayout jPanelArticulosLayout = new javax.swing.GroupLayout(jPanelArticulos);
+        jPanelArticulos.setLayout(jPanelArticulosLayout);
+        jPanelArticulosLayout.setHorizontalGroup(
+            jPanelArticulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanelArticulosLayout.setVerticalGroup(
+            jPanelArticulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanelPrincipal.add(jPanelArticulos, "card2");
 
         jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -104,11 +271,21 @@ public class VentanaP extends javax.swing.JFrame {
         jMenuItemArticulos.setBackground(new java.awt.Color(0, 0, 0));
         jMenuItemArticulos.setForeground(new java.awt.Color(204, 204, 0));
         jMenuItemArticulos.setText("Articulos");
+        jMenuItemArticulos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemArticulosActionPerformed(evt);
+            }
+        });
         jMenuGestion.add(jMenuItemArticulos);
 
         jMenuItemClientes.setBackground(new java.awt.Color(0, 0, 0));
         jMenuItemClientes.setForeground(new java.awt.Color(204, 204, 0));
         jMenuItemClientes.setText("Clientes");
+        jMenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemClientesActionPerformed(evt);
+            }
+        });
         jMenuGestion.add(jMenuItemClientes);
 
         jMenuItemContactos.setBackground(new java.awt.Color(0, 0, 0));
@@ -225,15 +402,27 @@ public class VentanaP extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1304, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 511, Short.MAX_VALUE)
+            .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemArticulosActionPerformed
+        CardLayout card = (CardLayout) jPanelPrincipal.getLayout();
+        card.show(jPanelPrincipal,"jPanelArticulos");
+        System.out.println("PPPP");
+    }//GEN-LAST:event_jMenuItemArticulosActionPerformed
+
+    private void jMenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClientesActionPerformed
+        CardLayout card = (CardLayout) jPanelPrincipal.getLayout();
+        card.show(jPanelPrincipal, "jPanelClientes");
+         System.out.println("AAAAA");
+    }//GEN-LAST:event_jMenuItemClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,6 +461,12 @@ public class VentanaP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenuAlmacen;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCompras;
@@ -295,9 +490,18 @@ public class VentanaP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemTarifas;
     private javax.swing.JMenu jMenuTraza;
     private javax.swing.JMenu jMenuVentas;
+    private javax.swing.JPanel jPanelArticulos;
+    private javax.swing.JPanel jPanelClientes;
+    private javax.swing.JPanel jPanelCompras;
+    private javax.swing.JPanel jPanelGeneral;
+    private javax.swing.JPanel jPanelLista;
+    private javax.swing.JPanel jPanelPrincipal;
+    private javax.swing.JPanel jPanelStocks;
+    private javax.swing.JPanel jPanelVentas;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

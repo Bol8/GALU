@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.LineaPedidoP" table="linea_pedido_p" catalog="galu" optimistic-lock="version">
+        <composite-id name="id" class="modelos.LineaPedidoPId">
+            <key-property name="linea" type="int">
+                <column name="Linea" />
+            </key-property>
+            <key-property name="articuloIdArticulo" type="int">
+                <column name="ARTICULO_idARTICULO" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="articulo" class="modelos.Articulo" update="false" insert="false" fetch="select">
+            <column name="ARTICULO_idARTICULO" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pedidoP" class="modelos.PedidoP" fetch="select">
+            <column name="PEDIDO_P_idPEDIDO_P" not-null="true" />
+        </many-to-one>
+        <property name="cantidad" type="int">
+            <column name="Cantidad" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

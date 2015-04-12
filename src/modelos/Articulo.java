@@ -12,7 +12,8 @@ public class Articulo  implements java.io.Serializable {
 
 
      private Integer idArticulo;
-     private Estados estados;
+    // private Estados estados;
+     private int estado;
      private String nombre;
      private Float peso;
      private String tipo;
@@ -28,8 +29,8 @@ public class Articulo  implements java.io.Serializable {
     }
 
 	
-    public Articulo(Estados estados, String nombre, String tipo, float precio, float iva, String origen, String destino) {
-        this.estados = estados;
+    public Articulo(int estado, String nombre, String tipo, float precio, float iva, String origen, String destino) {
+        this.estado = estado;
         this.nombre = nombre;
         this.tipo = tipo;
         this.precio = precio;
@@ -37,8 +38,8 @@ public class Articulo  implements java.io.Serializable {
         this.origen = origen;
         this.destino = destino;
     }
-    public Articulo(Estados estados, String nombre, Float peso, String tipo, float precio, float iva, String descripcion, String origen, String destino, Set lineaPedidoPs, Set lineaPedidoCs) {
-       this.estados = estados;
+    public Articulo(int estado, String nombre, Float peso, String tipo, float precio, float iva, String descripcion, String origen, String destino) {
+       this.estado = estado;
        this.nombre = nombre;
        this.peso = peso;
        this.tipo = tipo;
@@ -47,8 +48,6 @@ public class Articulo  implements java.io.Serializable {
        this.descripcion = descripcion;
        this.origen = origen;
        this.destino = destino;
-       this.lineaPedidoPs = lineaPedidoPs;
-       this.lineaPedidoCs = lineaPedidoCs;
     }
    
     public Integer getIdArticulo() {
@@ -58,12 +57,12 @@ public class Articulo  implements java.io.Serializable {
     public void setIdArticulo(Integer idArticulo) {
         this.idArticulo = idArticulo;
     }
-    public Estados getEstados() {
-        return this.estados;
+    public int getEstados() {
+        return this.estado;
     }
     
-    public void setEstados(Estados estados) {
-        this.estados = estados;
+    public void setEstados(int estado) {
+        this.estado = estado;
     }
     public String getNombre() {
         return this.nombre;

@@ -3,6 +3,7 @@ package vistas;
 import java.sql.Connection;
 import conexiones.DBConnection;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -98,10 +99,12 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(jPanelClientesLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jButton1)
-                .addContainerGap(441, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
 
         jPanelPrincipal.add(jPanelClientes, "card3");
+
+        jTabbedPane1.setAutoscrolls(true);
 
         jLabel1.setFont(new java.awt.Font("SketchFlow Print", 3, 36)); // NOI18N
         jLabel1.setText("Lista");
@@ -120,7 +123,7 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(jPanelListaLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lista", jPanelLista);
@@ -142,7 +145,7 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(jPanelGeneralLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel2)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("General", jPanelGeneral);
@@ -164,7 +167,7 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(jPanelVentasLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel3)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ventas", jPanelVentas);
@@ -186,7 +189,7 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(jPanelComprasLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel4)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Compras", jPanelCompras);
@@ -208,7 +211,7 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(jPanelStocksLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel5)
-                .addContainerGap(410, Short.MAX_VALUE))
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Stocks", jPanelStocks);
@@ -217,11 +220,11 @@ public class VentanaP extends javax.swing.JFrame {
         jPanelArticulos.setLayout(jPanelArticulosLayout);
         jPanelArticulosLayout.setHorizontalGroup(
             jPanelArticulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane1)
         );
         jPanelArticulosLayout.setVerticalGroup(
             jPanelArticulosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane1)
         );
 
         jPanelPrincipal.add(jPanelArticulos, "card2");
@@ -413,17 +416,21 @@ public class VentanaP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemArticulosActionPerformed
-        CardLayout card = (CardLayout) jPanelPrincipal.getLayout();
-        card.show(jPanelPrincipal,"jPanelArticulos");
-        System.out.println("PPPP");
+        cambiarCard(jPanelArticulos);
+        
     }//GEN-LAST:event_jMenuItemArticulosActionPerformed
 
     private void jMenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClientesActionPerformed
-        CardLayout card = (CardLayout) jPanelPrincipal.getLayout();
-        card.show(jPanelPrincipal, "jPanelClientes");
-         System.out.println("AAAAA");
+        cambiarCard(jPanelClientes);
     }//GEN-LAST:event_jMenuItemClientesActionPerformed
 
+    private void cambiarCard(JPanel panel ){
+        jPanelPrincipal.removeAll();
+        jPanelPrincipal.add(panel);
+        jPanelPrincipal.repaint();
+        jPanelPrincipal.revalidate();
+    }
+    
     /**
      * @param args the command line arguments
      */

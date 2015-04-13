@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import modelos.Articulo;
 
 /**
  *
@@ -18,7 +19,8 @@ import java.util.ArrayList;
  */
 public class ArticuloDao {
     
-      private static final String QUERY_INSERT = "insert into categoria_productos (nom_cat_prod , descrip_cat_prod) VALUES (?,?)";
+     private static final String QUERY_INSERT = "insert into ARTICULO (Nombre , Peso, Tipo, Precio, IVA, Descripcion,"
+              + " Origen, Destino, Estados_idEstados ) VALUES (?,?,?,?,?,?,?,?,?)";
     private static final String QUERY_UPDATE = "Update categoria_productos set nom_cat_prod = ? ,"
             + " descrip_cat_prod = ? WHERE idcategoria_productos = ? ";
     private static final String QUERY_DELETE = "Delete FROM categoria_productos where idcategoria_productos = ?";
@@ -36,16 +38,29 @@ public class ArticuloDao {
     }
     
     
-     public void insert(String tipo, String descripcion) {
+     public boolean insert(Articulo art) {
         try {
             stmt = conexion.prepareStatement(QUERY_INSERT);
-            stmt.setString(1, tipo);
-            stmt.setString(2, descripcion);
+            stmt.setString(1,art.getNombre());
+            stmt.setFloat(2,art.getPeso() );
+            stmt.setString(3,art.getTipo() );
+            stmt.setFloat(4,art.getPrecio());
+            stmt.setFloat(5,art.getIva());
+            stmt.setString(6,art.getDestino() );
+            stmt.setString(7,art.getOrigen());
+            stmt.setString(8,art.getDestino());
+            stmt.setInt(9,1);
+                    
             stmt.executeUpdate();
             stmt.close();
+            
         } catch (SQLException ex) {
             System.out.println("Error en insert producto");
+            ex.printStackTrace();
+            return false;
         }
+        
+        return true;
     }
 
     public void update(ArrayList lista) {

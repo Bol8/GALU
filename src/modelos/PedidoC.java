@@ -1,5 +1,5 @@
 package modelos;
-// Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,36 +12,45 @@ import java.util.Set;
 public class PedidoC  implements java.io.Serializable {
 
 
-     private Integer idPedidoC;
+     private Integer numPed;
      private Cliente cliente;
      private EstadoPed estadoPed;
+     private FormaPago formaPago;
      private Date fechaA;
      private Float total;
+     private String destino;
+     private String tipo;
      private Set lineaPedidoCs = new HashSet(0);
 
     public PedidoC() {
     }
 
 	
-    public PedidoC(Cliente cliente, EstadoPed estadoPed, Date fechaA) {
+    public PedidoC(Cliente cliente, EstadoPed estadoPed, FormaPago formaPago, Date fechaA, String destino, String tipo) {
         this.cliente = cliente;
         this.estadoPed = estadoPed;
+        this.formaPago = formaPago;
         this.fechaA = fechaA;
+        this.destino = destino;
+        this.tipo = tipo;
     }
-    public PedidoC(Cliente cliente, EstadoPed estadoPed, Date fechaA, Float total, Set lineaPedidoCs) {
+    public PedidoC(Cliente cliente, EstadoPed estadoPed, FormaPago formaPago, Date fechaA, Float total, String destino, String tipo, Set lineaPedidoCs) {
        this.cliente = cliente;
        this.estadoPed = estadoPed;
+       this.formaPago = formaPago;
        this.fechaA = fechaA;
        this.total = total;
+       this.destino = destino;
+       this.tipo = tipo;
        this.lineaPedidoCs = lineaPedidoCs;
     }
    
-    public Integer getIdPedidoC() {
-        return this.idPedidoC;
+    public Integer getNumPed() {
+        return this.numPed;
     }
     
-    public void setIdPedidoC(Integer idPedidoC) {
-        this.idPedidoC = idPedidoC;
+    public void setNumPed(Integer numPed) {
+        this.numPed = numPed;
     }
     public Cliente getCliente() {
         return this.cliente;
@@ -57,6 +66,13 @@ public class PedidoC  implements java.io.Serializable {
     public void setEstadoPed(EstadoPed estadoPed) {
         this.estadoPed = estadoPed;
     }
+    public FormaPago getFormaPago() {
+        return this.formaPago;
+    }
+    
+    public void setFormaPago(FormaPago formaPago) {
+        this.formaPago = formaPago;
+    }
     public Date getFechaA() {
         return this.fechaA;
     }
@@ -70,6 +86,20 @@ public class PedidoC  implements java.io.Serializable {
     
     public void setTotal(Float total) {
         this.total = total;
+    }
+    public String getDestino() {
+        return this.destino;
+    }
+    
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+    public String getTipo() {
+        return this.tipo;
+    }
+    
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     public Set getLineaPedidoCs() {
         return this.lineaPedidoCs;

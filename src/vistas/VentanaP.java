@@ -1,4 +1,4 @@
-package vistas;
+ package vistas;
 
 import java.sql.Connection;
 import conexiones.DBConnection;
@@ -1252,9 +1252,9 @@ public class VentanaP extends javax.swing.JFrame {
           float iva = 0.0F;
           String descrp = jTextAreaDescArt.getText();
           String origen = jTOrgArt.getText();
-          int estado = jComboEstadoArt.getSelectedIndex();
+        //  int estado = jComboEstadoArt.getSelectedIndex();
           
-          Articulo art = new Articulo(estado, nom, peso, "", precio, iva, descrp, origen, "");
+        Articulo art = new Articulo(1, nom, peso, "Empanada", precio, iva, descrp, origen);
                   
           return art;            
     }

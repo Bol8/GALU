@@ -1,18 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1 -->
+<!-- Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="modelos.PedidoC" table="pedido_c" catalog="galu" optimistic-lock="version">
-        <id name="idPedidoC" type="java.lang.Integer">
-            <column name="idPEDIDO_C" />
+        <id name="numPed" type="java.lang.Integer">
+            <column name="Num_ped" />
             <generator class="identity" />
         </id>
         <many-to-one name="cliente" class="modelos.Cliente" fetch="select">
-            <column name="CLIENTE_idCLIENTE" not-null="true" />
+            <column name="idCliente" not-null="true" />
         </many-to-one>
         <many-to-one name="estadoPed" class="modelos.EstadoPed" fetch="select">
-            <column name="ESTADO_PED_idEstados" not-null="true" />
+            <column name="Estado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="formaPago" class="modelos.FormaPago" fetch="select">
+            <column name="Forma_pago" not-null="true" />
         </many-to-one>
         <property name="fechaA" type="date">
             <column name="Fecha_A" length="10" not-null="true" />
@@ -20,9 +23,15 @@
         <property name="total" type="java.lang.Float">
             <column name="Total" precision="12" scale="0" />
         </property>
+        <property name="destino" type="string">
+            <column name="Destino" length="45" not-null="true" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="Tipo" length="45" not-null="true" />
+        </property>
         <set name="lineaPedidoCs" table="linea_pedido_c" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="PEDIDO_C_idPEDIDO_C" not-null="true" />
+                <column name="Num_ped" not-null="true" />
             </key>
             <one-to-many class="modelos.LineaPedidoC" />
         </set>

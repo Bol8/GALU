@@ -1,5 +1,5 @@
 package modelos;
-// Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Proveedor  implements java.io.Serializable {
 
 
-     private Integer idProveedor;
+     private Integer idProv;
      private Estados estados;
      private String razonSocial;
      private String nif;
@@ -23,6 +23,7 @@ public class Proveedor  implements java.io.Serializable {
      private String provincia;
      private String pais;
      private Date fechaA;
+     private String imagen;
      private Set pedidoPs = new HashSet(0);
 
     public Proveedor() {
@@ -37,7 +38,7 @@ public class Proveedor  implements java.io.Serializable {
         this.poblacion = poblacion;
         this.fechaA = fechaA;
     }
-    public Proveedor(Estados estados, String razonSocial, String nif, String nifR, String domicilio, String cp, String poblacion, String provincia, String pais, Date fechaA, Set pedidoPs) {
+    public Proveedor(Estados estados, String razonSocial, String nif, String nifR, String domicilio, String cp, String poblacion, String provincia, String pais, Date fechaA, String imagen, Set pedidoPs) {
        this.estados = estados;
        this.razonSocial = razonSocial;
        this.nif = nif;
@@ -48,15 +49,16 @@ public class Proveedor  implements java.io.Serializable {
        this.provincia = provincia;
        this.pais = pais;
        this.fechaA = fechaA;
+       this.imagen = imagen;
        this.pedidoPs = pedidoPs;
     }
    
-    public Integer getIdProveedor() {
-        return this.idProveedor;
+    public Integer getIdProv() {
+        return this.idProv;
     }
     
-    public void setIdProveedor(Integer idProveedor) {
-        this.idProveedor = idProveedor;
+    public void setIdProv(Integer idProv) {
+        this.idProv = idProv;
     }
     public Estados getEstados() {
         return this.estados;
@@ -127,6 +129,13 @@ public class Proveedor  implements java.io.Serializable {
     
     public void setFechaA(Date fechaA) {
         this.fechaA = fechaA;
+    }
+    public String getImagen() {
+        return this.imagen;
+    }
+    
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     public Set getPedidoPs() {
         return this.pedidoPs;

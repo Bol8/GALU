@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1 -->
+<!-- Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="modelos.Cliente" table="cliente" catalog="galu" optimistic-lock="version">
-        <id name="idCliente" type="java.lang.Integer">
-            <column name="idCLIENTE" />
+        <id name="idCli" type="java.lang.Integer">
+            <column name="idCli" />
             <generator class="identity" />
         </id>
         <many-to-one name="estados" class="modelos.Estados" fetch="select">
-            <column name="ESTADOS_idESTADOS" not-null="true" />
+            <column name="Estado" not-null="true" />
         </many-to-one>
         <property name="razonSocial" type="string">
             <column name="`Razon Social`" length="45" not-null="true" />
@@ -50,9 +50,12 @@
         <property name="web" type="string">
             <column name="Web" length="45" />
         </property>
+        <property name="imagen" type="string">
+            <column name="Imagen" length="100" />
+        </property>
         <set name="pedidoCs" table="pedido_c" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="CLIENTE_idCLIENTE" not-null="true" />
+                <column name="idCliente" not-null="true" />
             </key>
             <one-to-many class="modelos.PedidoC" />
         </set>

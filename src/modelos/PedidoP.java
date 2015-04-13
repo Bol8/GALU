@@ -1,5 +1,5 @@
 package modelos;
-// Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,36 +12,42 @@ import java.util.Set;
 public class PedidoP  implements java.io.Serializable {
 
 
-     private Integer idPedidoP;
+     private Integer numPed;
      private EstadoPed estadoPed;
+     private FormaPago formaPago;
      private Proveedor proveedor;
      private Date fechaA;
      private String total;
+     private String tipo;
      private Set lineaPedidoPs = new HashSet(0);
 
     public PedidoP() {
     }
 
 	
-    public PedidoP(EstadoPed estadoPed, Proveedor proveedor, Date fechaA) {
+    public PedidoP(EstadoPed estadoPed, FormaPago formaPago, Proveedor proveedor, Date fechaA, String tipo) {
         this.estadoPed = estadoPed;
+        this.formaPago = formaPago;
         this.proveedor = proveedor;
         this.fechaA = fechaA;
+        this.tipo = tipo;
     }
-    public PedidoP(EstadoPed estadoPed, Proveedor proveedor, Date fechaA, String total, Set lineaPedidoPs) {
+    public PedidoP(EstadoPed estadoPed, FormaPago formaPago, Proveedor proveedor, Date fechaA, String total, String tipo, Set lineaPedidoPs) {
        this.estadoPed = estadoPed;
+       this.formaPago = formaPago;
        this.proveedor = proveedor;
        this.fechaA = fechaA;
        this.total = total;
+       this.tipo = tipo;
        this.lineaPedidoPs = lineaPedidoPs;
     }
    
-    public Integer getIdPedidoP() {
-        return this.idPedidoP;
+    public Integer getNumPed() {
+        return this.numPed;
     }
     
-    public void setIdPedidoP(Integer idPedidoP) {
-        this.idPedidoP = idPedidoP;
+    public void setNumPed(Integer numPed) {
+        this.numPed = numPed;
     }
     public EstadoPed getEstadoPed() {
         return this.estadoPed;
@@ -49,6 +55,13 @@ public class PedidoP  implements java.io.Serializable {
     
     public void setEstadoPed(EstadoPed estadoPed) {
         this.estadoPed = estadoPed;
+    }
+    public FormaPago getFormaPago() {
+        return this.formaPago;
+    }
+    
+    public void setFormaPago(FormaPago formaPago) {
+        this.formaPago = formaPago;
     }
     public Proveedor getProveedor() {
         return this.proveedor;
@@ -70,6 +83,13 @@ public class PedidoP  implements java.io.Serializable {
     
     public void setTotal(String total) {
         this.total = total;
+    }
+    public String getTipo() {
+        return this.tipo;
+    }
+    
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     public Set getLineaPedidoPs() {
         return this.lineaPedidoPs;

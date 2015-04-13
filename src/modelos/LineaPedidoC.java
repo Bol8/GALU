@@ -1,5 +1,5 @@
 package modelos;
-// Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1
 
 
 
@@ -9,27 +9,36 @@ package modelos;
 public class LineaPedidoC  implements java.io.Serializable {
 
 
-     private String linea;
+     private LineaPedidoCId id;
      private Articulo articulo;
      private PedidoC pedidoC;
      private int cantidad;
+     private Float total;
 
     public LineaPedidoC() {
     }
 
-    public LineaPedidoC(String linea, Articulo articulo, PedidoC pedidoC, int cantidad) {
-       this.linea = linea;
+	
+    public LineaPedidoC(LineaPedidoCId id, Articulo articulo, PedidoC pedidoC, int cantidad) {
+        this.id = id;
+        this.articulo = articulo;
+        this.pedidoC = pedidoC;
+        this.cantidad = cantidad;
+    }
+    public LineaPedidoC(LineaPedidoCId id, Articulo articulo, PedidoC pedidoC, int cantidad, Float total) {
+       this.id = id;
        this.articulo = articulo;
        this.pedidoC = pedidoC;
        this.cantidad = cantidad;
+       this.total = total;
     }
    
-    public String getLinea() {
-        return this.linea;
+    public LineaPedidoCId getId() {
+        return this.id;
     }
     
-    public void setLinea(String linea) {
-        this.linea = linea;
+    public void setId(LineaPedidoCId id) {
+        this.id = id;
     }
     public Articulo getArticulo() {
         return this.articulo;
@@ -51,6 +60,13 @@ public class LineaPedidoC  implements java.io.Serializable {
     
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+    public Float getTotal() {
+        return this.total;
+    }
+    
+    public void setTotal(Float total) {
+        this.total = total;
     }
 
 

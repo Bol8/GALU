@@ -82,11 +82,11 @@ public class VentanaP extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaDescArt = new javax.swing.JTextArea();
         jComboEstadoArt = new javax.swing.JComboBox();
-        jLabel38 = new javax.swing.JLabel();
-        jDateArt = new com.toedter.calendar.JDateChooser();
         jLabel39 = new javax.swing.JLabel();
         jComboIVAArt = new javax.swing.JComboBox();
         jButtonSaveARt = new javax.swing.JButton();
+        jLabel40 = new javax.swing.JLabel();
+        jComboEstadoArt1 = new javax.swing.JComboBox();
         jButtonFotoArt = new javax.swing.JButton();
         jPanelGeneral = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -157,6 +157,7 @@ public class VentanaP extends javax.swing.JFrame {
         jMenuTraza = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanelPrincipal.setLayout(new java.awt.CardLayout());
 
@@ -231,7 +232,7 @@ public class VentanaP extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Nombre", "Tipo", "Origen", "Destino", "IVA", "Precio", "Estado"
+                "Código", "Nombre", "Origen", "Tipo", "Estado", "Peso", "IVA", "Precio"
             }
         ));
         jTableListaArt.setSelectionBackground(new java.awt.Color(190, 252, 236));
@@ -418,9 +419,6 @@ public class VentanaP extends javax.swing.JFrame {
 
         jComboEstadoArt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel38.setText("Fecha:");
-
         jLabel39.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel39.setText("IVA:");
 
@@ -433,6 +431,11 @@ public class VentanaP extends javax.swing.JFrame {
             }
         });
 
+        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel40.setText("Tipo:");
+
+        jComboEstadoArt1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -440,11 +443,13 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel44)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel44)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel33)
@@ -453,7 +458,7 @@ public class VentanaP extends javax.swing.JFrame {
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTCodigoArt, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jTCodigoArt, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -463,18 +468,17 @@ public class VentanaP extends javax.swing.JFrame {
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTPesoArt, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jTPesoArt, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTOrgArt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jDateArt, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
+                                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel40))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTOrgArt, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboEstadoArt1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -483,9 +487,11 @@ public class VentanaP extends javax.swing.JFrame {
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jComboIVAArt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addComponent(jButtonSaveARt)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                                        .addComponent(jComboIVAArt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtonSaveARt)))
+                        .addGap(32, 32, 32))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -518,20 +524,19 @@ public class VentanaP extends javax.swing.JFrame {
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel35)
                                     .addComponent(jTPrecioArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel38)
-                            .addComponent(jDateArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(40, 40, 40))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel39)
-                        .addComponent(jComboIVAArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41)
+                        .addComponent(jComboIVAArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel40)
+                        .addComponent(jComboEstadoArt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(jLabel44)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(73, 73, 73)
                 .addComponent(jButtonSaveARt)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jButtonFotoArt.setText("Foto");
@@ -1034,28 +1039,28 @@ public class VentanaP extends javax.swing.JFrame {
 
         jMenuEmpresa.setBackground(new java.awt.Color(0, 0, 0));
         jMenuEmpresa.setBorder(null);
-        jMenuEmpresa.setForeground(new java.awt.Color(255, 102, 0));
+        jMenuEmpresa.setForeground(new java.awt.Color(255, 255, 204));
         jMenuEmpresa.setText("Empresa");
 
-        jMenuItemAbrirE.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemAbrirE.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemAbrirE.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemAbrirE.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemAbrirE.setText("Abrir Empresa");
         jMenuItemAbrirE.setBorderPainted(true);
         jMenuEmpresa.add(jMenuItemAbrirE);
 
-        jMenuItemNuevaE.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemNuevaE.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemNuevaE.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemNuevaE.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemNuevaE.setText("Nueva Empresa");
         jMenuItemNuevaE.setOpaque(true);
         jMenuEmpresa.add(jMenuItemNuevaE);
 
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOpaque(true);
         jMenuEmpresa.add(jSeparator1);
 
-        jMenuItemSalir.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemSalir.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemSalir.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemSalir.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemSalir.setText("Salir");
         jMenuItemSalir.setContentAreaFilled(false);
         jMenuItemSalir.setOpaque(true);
@@ -1065,11 +1070,11 @@ public class VentanaP extends javax.swing.JFrame {
 
         jMenuGestion.setBackground(new java.awt.Color(0, 0, 0));
         jMenuGestion.setBorder(null);
-        jMenuGestion.setForeground(new java.awt.Color(255, 102, 0));
+        jMenuGestion.setForeground(new java.awt.Color(255, 255, 204));
         jMenuGestion.setText("Gestión");
 
-        jMenuItemArticulos.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemArticulos.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemArticulos.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemArticulos.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemArticulos.setText("Articulos");
         jMenuItemArticulos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1078,8 +1083,8 @@ public class VentanaP extends javax.swing.JFrame {
         });
         jMenuGestion.add(jMenuItemArticulos);
 
-        jMenuItemClientes.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemClientes.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemClientes.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemClientes.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemClientes.setText("Clientes");
         jMenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1088,13 +1093,13 @@ public class VentanaP extends javax.swing.JFrame {
         });
         jMenuGestion.add(jMenuItemClientes);
 
-        jMenuItemContactos.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemContactos.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemContactos.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemContactos.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemContactos.setText("Contactos");
         jMenuGestion.add(jMenuItemContactos);
 
-        jMenuItemProv.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemProv.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemProv.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemProv.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemProv.setText("Proveedores");
         jMenuItemProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1103,13 +1108,13 @@ public class VentanaP extends javax.swing.JFrame {
         });
         jMenuGestion.add(jMenuItemProv);
 
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator2.setOpaque(true);
         jMenuGestion.add(jSeparator2);
 
-        jMenuItemTarifas.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemTarifas.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemTarifas.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemTarifas.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemTarifas.setText("Tarifas");
         jMenuGestion.add(jMenuItemTarifas);
 
@@ -1117,40 +1122,40 @@ public class VentanaP extends javax.swing.JFrame {
 
         jMenuAlmacen.setBackground(new java.awt.Color(0, 0, 0));
         jMenuAlmacen.setBorder(null);
-        jMenuAlmacen.setForeground(new java.awt.Color(255, 102, 0));
+        jMenuAlmacen.setForeground(new java.awt.Color(255, 255, 204));
         jMenuAlmacen.setText("Almacén");
         jMenuBar1.add(jMenuAlmacen);
 
         jMenuVentas.setBackground(new java.awt.Color(0, 0, 0));
         jMenuVentas.setBorder(null);
-        jMenuVentas.setForeground(new java.awt.Color(255, 102, 0));
+        jMenuVentas.setForeground(new java.awt.Color(255, 255, 204));
         jMenuVentas.setText("Ventas");
 
-        jMenuItemPresuV.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemPresuV.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemPresuV.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemPresuV.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemPresuV.setText("Presupuestos");
         jMenuItemPresuV.setOpaque(true);
         jMenuVentas.add(jMenuItemPresuV);
 
-        jMenuItemFactuV.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemFactuV.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemFactuV.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemFactuV.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemFactuV.setText("Facturas");
         jMenuItemFactuV.setOpaque(true);
         jMenuVentas.add(jMenuItemFactuV);
 
-        jMenuItemAlbarV.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemAlbarV.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemAlbarV.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemAlbarV.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemAlbarV.setText("Albaranes");
         jMenuItemAlbarV.setOpaque(true);
         jMenuVentas.add(jMenuItemAlbarV);
 
-        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setBackground(new java.awt.Color(102, 102, 102));
         jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator4.setOpaque(true);
         jMenuVentas.add(jSeparator4);
 
-        jMenuItemPedV.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemPedV.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemPedV.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemPedV.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemPedV.setText("Pedidos");
         jMenuItemPedV.setOpaque(true);
         jMenuVentas.add(jMenuItemPedV);
@@ -1159,36 +1164,36 @@ public class VentanaP extends javax.swing.JFrame {
 
         jMenuCompras.setBackground(new java.awt.Color(0, 0, 0));
         jMenuCompras.setBorder(null);
-        jMenuCompras.setForeground(new java.awt.Color(255, 102, 0));
+        jMenuCompras.setForeground(new java.awt.Color(255, 255, 204));
         jMenuCompras.setText("Compras");
 
-        jMenuItemPedC.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemPedC.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemPedC.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemPedC.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemPedC.setText("Pedidos");
         jMenuItemPedC.setBorderPainted(true);
         jMenuItemPedC.setContentAreaFilled(false);
         jMenuItemPedC.setOpaque(true);
         jMenuCompras.add(jMenuItemPedC);
 
-        jMenuItemGPedC.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemGPedC.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemGPedC.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemGPedC.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemGPedC.setText("Generar Pedidos");
         jMenuItemGPedC.setOpaque(true);
         jMenuCompras.add(jMenuItemGPedC);
 
-        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator3.setOpaque(true);
         jMenuCompras.add(jSeparator3);
 
-        jMenuItemAlbarC.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemAlbarC.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemAlbarC.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemAlbarC.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemAlbarC.setText("Albaranes");
         jMenuItemAlbarC.setOpaque(true);
         jMenuCompras.add(jMenuItemAlbarC);
 
-        jMenuItemFactuC.setBackground(new java.awt.Color(0, 0, 0));
-        jMenuItemFactuC.setForeground(new java.awt.Color(204, 204, 0));
+        jMenuItemFactuC.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuItemFactuC.setForeground(new java.awt.Color(255, 255, 204));
         jMenuItemFactuC.setText("Facturas");
         jMenuItemFactuC.setOpaque(true);
         jMenuCompras.add(jMenuItemFactuC);
@@ -1197,7 +1202,7 @@ public class VentanaP extends javax.swing.JFrame {
 
         jMenuTraza.setBackground(new java.awt.Color(0, 0, 0));
         jMenuTraza.setBorder(null);
-        jMenuTraza.setForeground(new java.awt.Color(255, 102, 0));
+        jMenuTraza.setForeground(new java.awt.Color(255, 255, 204));
         jMenuTraza.setText("Trazabilidad");
         jMenuBar1.add(jMenuTraza);
 
@@ -1300,8 +1305,8 @@ public class VentanaP extends javax.swing.JFrame {
     private javax.swing.JButton jButtonFotoArt;
     private javax.swing.JButton jButtonSaveARt;
     private javax.swing.JComboBox jComboEstadoArt;
+    private javax.swing.JComboBox jComboEstadoArt1;
     private javax.swing.JComboBox jComboIVAArt;
-    private com.toedter.calendar.JDateChooser jDateArt;
     private javax.swing.JLabel jLCodArt;
     private javax.swing.JLabel jLEstadoArt;
     private javax.swing.JLabel jLNomArt;
@@ -1331,9 +1336,9 @@ public class VentanaP extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

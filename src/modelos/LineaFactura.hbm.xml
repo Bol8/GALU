@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2015 21:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.LineaFactura" table="linea_factura" catalog="galu" optimistic-lock="version">
+        <composite-id name="id" class="modelos.LineaFacturaId">
+            <key-property name="linea" type="int">
+                <column name="Linea" />
+            </key-property>
+            <key-property name="NFactura" type="int">
+                <column name="N_factura" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="facturas" class="modelos.Facturas" update="false" insert="false" fetch="select">
+            <column name="N_factura" not-null="true" />
+        </many-to-one>
+        <property name="articulo" type="int">
+            <column name="Articulo" not-null="true" />
+        </property>
+        <property name="cantidad" type="int">
+            <column name="Cantidad" not-null="true" />
+        </property>
+        <property name="precio" type="float">
+            <column name="Precio" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="iva" type="float">
+            <column name="IVA" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="importe" type="java.lang.Float">
+            <column name="Importe" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

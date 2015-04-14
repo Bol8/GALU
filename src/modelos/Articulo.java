@@ -1,5 +1,5 @@
 package modelos;
-// Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 21:45:23 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,8 +11,7 @@ import java.util.Set;
 public class Articulo  implements java.io.Serializable {
 
 
-     private Integer idArticulo;
-    // private Estados estados;
+     private String idArt;
      private int estado;
      private String nombre;
      private Float peso;
@@ -21,7 +20,7 @@ public class Articulo  implements java.io.Serializable {
      private float iva;
      private String descripcion;
      private String origen;
-     private String destino;
+     private String imagen;
      private Set lineaPedidoPs = new HashSet(0);
      private Set lineaPedidoCs = new HashSet(0);
 
@@ -29,16 +28,17 @@ public class Articulo  implements java.io.Serializable {
     }
 
 	
-    public Articulo(int estado, String nombre, String tipo, float precio, float iva, String origen, String destino) {
+    public Articulo(String idArt, int estado, String nombre, String tipo, float precio, float iva, String origen) {
+        this.idArt = idArt;
         this.estado = estado;
         this.nombre = nombre;
         this.tipo = tipo;
         this.precio = precio;
         this.iva = iva;
         this.origen = origen;
-        this.destino = destino;
     }
-    public Articulo(int estado, String nombre, Float peso, String tipo, float precio, float iva, String descripcion, String origen, String destino) {
+    public Articulo(String idArt, int estado, String nombre, Float peso, String tipo, float precio, float iva, String descripcion, String origen) {
+       this.idArt = idArt;
        this.estado = estado;
        this.nombre = nombre;
        this.peso = peso;
@@ -47,21 +47,20 @@ public class Articulo  implements java.io.Serializable {
        this.iva = iva;
        this.descripcion = descripcion;
        this.origen = origen;
-       this.destino = destino;
     }
    
-    public Integer getIdArticulo() {
-        return this.idArticulo;
+    public String getIdArt() {
+        return this.idArt;
     }
     
-    public void setIdArticulo(Integer idArticulo) {
-        this.idArticulo = idArticulo;
+    public void setIdArt(String idArt) {
+        this.idArt = idArt;
     }
     public int getEstados() {
         return this.estado;
     }
     
-    public void setEstados(int estado) {
+    public void setEstados(int estados) {
         this.estado = estado;
     }
     public String getNombre() {
@@ -113,31 +112,14 @@ public class Articulo  implements java.io.Serializable {
     public void setOrigen(String origen) {
         this.origen = origen;
     }
-    public String getDestino() {
-        return this.destino;
+    public String getImagen() {
+        return this.imagen;
     }
     
-    public void setDestino(String destino) {
-        this.destino = destino;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
-    public Set getLineaPedidoPs() {
-        return this.lineaPedidoPs;
-    }
-    
-    public void setLineaPedidoPs(Set lineaPedidoPs) {
-        this.lineaPedidoPs = lineaPedidoPs;
-    }
-    public Set getLineaPedidoCs() {
-        return this.lineaPedidoCs;
-    }
-    
-    public void setLineaPedidoCs(Set lineaPedidoCs) {
-        this.lineaPedidoCs = lineaPedidoCs;
-    }
-
-
-
-
+   
 }
 
 

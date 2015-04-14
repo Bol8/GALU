@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1 -->
+<!-- Generated 14-abr-2015 21:45:24 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="modelos.Estados" table="estados" catalog="galu" optimistic-lock="version">
         <id name="idEstados" type="java.lang.Integer">
@@ -13,19 +13,19 @@
         </property>
         <set name="clientes" table="cliente" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="ESTADOS_idESTADOS" not-null="true" />
+                <column name="Estado" not-null="true" />
             </key>
             <one-to-many class="modelos.Cliente" />
         </set>
         <set name="articulos" table="articulo" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="ESTADOS_idESTADOS" not-null="true" />
+                <column name="Estado" not-null="true" />
             </key>
             <one-to-many class="modelos.Articulo" />
         </set>
         <set name="proveedors" table="proveedor" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="ESTADOS_idESTADOS" not-null="true" />
+                <column name="Estado" not-null="true" />
             </key>
             <one-to-many class="modelos.Proveedor" />
         </set>

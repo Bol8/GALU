@@ -1,5 +1,5 @@
 package modelos;
-// Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 21:45:23 by Hibernate Tools 4.3.1
 
 
 
@@ -13,15 +13,24 @@ public class LineaPedidoP  implements java.io.Serializable {
      private Articulo articulo;
      private PedidoP pedidoP;
      private int cantidad;
+     private Float total;
 
     public LineaPedidoP() {
     }
 
+	
     public LineaPedidoP(LineaPedidoPId id, Articulo articulo, PedidoP pedidoP, int cantidad) {
+        this.id = id;
+        this.articulo = articulo;
+        this.pedidoP = pedidoP;
+        this.cantidad = cantidad;
+    }
+    public LineaPedidoP(LineaPedidoPId id, Articulo articulo, PedidoP pedidoP, int cantidad, Float total) {
        this.id = id;
        this.articulo = articulo;
        this.pedidoP = pedidoP;
        this.cantidad = cantidad;
+       this.total = total;
     }
    
     public LineaPedidoPId getId() {
@@ -51,6 +60,13 @@ public class LineaPedidoP  implements java.io.Serializable {
     
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+    public Float getTotal() {
+        return this.total;
+    }
+    
+    public void setTotal(Float total) {
+        this.total = total;
     }
 
 

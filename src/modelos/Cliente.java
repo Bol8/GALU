@@ -1,5 +1,5 @@
 package modelos;
-// Generated 11-abr-2015 20:27:45 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 21:45:23 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Set;
 public class Cliente  implements java.io.Serializable {
 
 
-     private Integer idCliente;
+     private Integer idCli;
      private Estados estados;
      private String razonSocial;
      private String nif;
@@ -27,6 +27,7 @@ public class Cliente  implements java.io.Serializable {
      private String telefono;
      private String mail;
      private String web;
+     private String imagen;
      private Set pedidoCs = new HashSet(0);
 
     public Cliente() {
@@ -43,7 +44,7 @@ public class Cliente  implements java.io.Serializable {
         this.tipo = tipo;
         this.telefono = telefono;
     }
-    public Cliente(Estados estados, String razonSocial, String nif, String nifR, String domicilio, String cp, String poblacion, String provincia, String pais, Date fechaA, String tipo, String telefono, String mail, String web, Set pedidoCs) {
+    public Cliente(Estados estados, String razonSocial, String nif, String nifR, String domicilio, String cp, String poblacion, String provincia, String pais, Date fechaA, String tipo, String telefono, String mail, String web, String imagen, Set pedidoCs) {
        this.estados = estados;
        this.razonSocial = razonSocial;
        this.nif = nif;
@@ -58,15 +59,16 @@ public class Cliente  implements java.io.Serializable {
        this.telefono = telefono;
        this.mail = mail;
        this.web = web;
+       this.imagen = imagen;
        this.pedidoCs = pedidoCs;
     }
    
-    public Integer getIdCliente() {
-        return this.idCliente;
+    public Integer getIdCli() {
+        return this.idCli;
     }
     
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setIdCli(Integer idCli) {
+        this.idCli = idCli;
     }
     public Estados getEstados() {
         return this.estados;
@@ -165,6 +167,13 @@ public class Cliente  implements java.io.Serializable {
     
     public void setWeb(String web) {
         this.web = web;
+    }
+    public String getImagen() {
+        return this.imagen;
+    }
+    
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     public Set getPedidoCs() {
         return this.pedidoCs;

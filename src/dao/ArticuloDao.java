@@ -19,8 +19,8 @@ import modelos.Articulo;
  */
 public class ArticuloDao {
     
-     private static final String QUERY_INSERT = "insert into ARTICULO (Nombre , Peso, Tipo, Precio, IVA, Descripcion,"
-              + " Origen, Destino, Estados_idEstados ) VALUES (?,?,?,?,?,?,?,?,?)";
+     private static final String QUERY_INSERT = "insert into ARTICULO (idArt,Nombre,Peso,Tipo,Estado,Precio,IVA,Descripcion,"
+              + " Origen,Imagen) VALUES (?,?,?,?,?,?,?,?,?,?)";
     private static final String QUERY_UPDATE = "Update categoria_productos set nom_cat_prod = ? ,"
             + " descrip_cat_prod = ? WHERE idcategoria_productos = ? ";
     private static final String QUERY_DELETE = "Delete FROM categoria_productos where idcategoria_productos = ?";
@@ -41,16 +41,17 @@ public class ArticuloDao {
      public boolean insert(Articulo art) {
         try {
             stmt = conexion.prepareStatement(QUERY_INSERT);
-            stmt.setString(1,art.getNombre());
-            stmt.setFloat(2,art.getPeso() );
-            stmt.setString(3,art.getTipo() );
-            stmt.setFloat(4,art.getPrecio());
-            stmt.setFloat(5,art.getIva());
-            stmt.setString(6,art.getDestino() );
-            stmt.setString(7,art.getOrigen());
-            stmt.setString(8,art.getDestino());
-            stmt.setInt(9,1);
-                    
+            stmt.setString(1,art.getIdArt());
+            stmt.setString(2,art.getNombre());
+            stmt.setFloat(3,art.getPeso() );
+            stmt.setString(4,art.getTipo() );
+            stmt.setInt(5,art.getEstados());
+            stmt.setFloat(6,art.getPrecio());
+            stmt.setFloat(7,art.getIva());
+            stmt.setString(8,art.getDescripcion());
+            stmt.setString(9,art.getOrigen());
+            stmt.setString(10,art.getImagen());
+            
             stmt.executeUpdate();
             stmt.close();
             

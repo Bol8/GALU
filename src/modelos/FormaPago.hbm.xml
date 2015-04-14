@@ -3,23 +3,23 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 14-abr-2015 21:45:24 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelos.EstadoPed" table="estado_ped" catalog="galu" optimistic-lock="version">
-        <id name="idEstados" type="java.lang.Integer">
-            <column name="idEstados" />
+    <class name="modelos.FormaPago" table="forma_pago" catalog="galu" optimistic-lock="version">
+        <id name="idPago" type="java.lang.Integer">
+            <column name="idPAGO" />
             <generator class="identity" />
         </id>
-        <property name="nombreE" type="string">
-            <column name="NombreE" length="45" not-null="true" />
+        <property name="tipo" type="string">
+            <column name="Tipo" length="45" not-null="true" />
         </property>
         <set name="pedidoPs" table="pedido_p" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="Estado" not-null="true" />
+                <column name="Forma_pago" not-null="true" />
             </key>
             <one-to-many class="modelos.PedidoP" />
         </set>
         <set name="pedidoCs" table="pedido_c" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="Estado" not-null="true" />
+                <column name="Forma_pago" not-null="true" />
             </key>
             <one-to-many class="modelos.PedidoC" />
         </set>

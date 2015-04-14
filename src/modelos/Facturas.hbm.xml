@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-abr-2015 21:45:24 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.Facturas" table="facturas" catalog="galu" optimistic-lock="version">
+        <id name="numero" type="java.lang.Integer">
+            <column name="Numero" />
+            <generator class="identity" />
+        </id>
+        <property name="empresa" type="int">
+            <column name="Empresa" not-null="true" />
+        </property>
+        <property name="facturado" type="int">
+            <column name="Facturado" not-null="true" />
+        </property>
+        <property name="enviado" type="int">
+            <column name="Enviado" not-null="true" />
+        </property>
+        <property name="fecha" type="date">
+            <column name="Fecha" length="10" not-null="true" />
+        </property>
+        <property name="tipoPed" type="string">
+            <column name="Tipo_ped" length="45" not-null="true" />
+        </property>
+        <property name="formaPago" type="string">
+            <column name="Forma_pago" length="45" not-null="true" />
+        </property>
+        <property name="cliente" type="int">
+            <column name="Cliente" not-null="true" />
+        </property>
+        <property name="totalBruto" type="java.lang.Float">
+            <column name="Total_bruto" precision="12" scale="0" />
+        </property>
+        <property name="dto" type="java.lang.Float">
+            <column name="Dto" precision="12" scale="0" />
+        </property>
+        <property name="dpp" type="java.lang.Float">
+            <column name="Dpp" precision="12" scale="0" />
+        </property>
+        <property name="portes" type="java.lang.Float">
+            <column name="Portes" precision="12" scale="0" />
+        </property>
+        <property name="iva" type="java.lang.Float">
+            <column name="IVA" precision="12" scale="0" />
+        </property>
+        <property name="re" type="java.lang.Float">
+            <column name="Re" precision="12" scale="0" />
+        </property>
+        <property name="cuotaRe" type="java.lang.Float">
+            <column name="Cuota_Re" precision="12" scale="0" />
+        </property>
+        <property name="total" type="java.lang.Float">
+            <column name="Total" precision="12" scale="0" />
+        </property>
+        <set name="lineaFacturas" table="linea_factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="N_factura" not-null="true" />
+            </key>
+            <one-to-many class="modelos.LineaFactura" />
+        </set>
+    </class>
+</hibernate-mapping>

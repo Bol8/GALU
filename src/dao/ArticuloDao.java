@@ -19,8 +19,8 @@ import modelos.Articulo;
  */
 public class ArticuloDao {
     
-     private static final String QUERY_INSERT = "insert into ARTICULO (Nombre,Peso,Tipo,Estado,Precio,IVA,Descripcion,"
-              + " Origen) VALUES (?,?,?,?,?,?,?,?)";
+     private static final String QUERY_INSERT = "insert into ARTICULO (idArt,Nombre,Peso,Tipo,Estado,Precio,IVA,Descripcion,"
+              + " Origen,Imagen) VALUES (?,?,?,?,?,?,?,?,?,?)";
     private static final String QUERY_UPDATE = "Update categoria_productos set nom_cat_prod = ? ,"
             + " descrip_cat_prod = ? WHERE idcategoria_productos = ? ";
     private static final String QUERY_DELETE = "Delete FROM categoria_productos where idcategoria_productos = ?";
@@ -50,7 +50,7 @@ public class ArticuloDao {
             stmt.setFloat(7,art.getIva());
             stmt.setString(8,art.getDescripcion());
             stmt.setString(9,art.getOrigen());
-            stmt.setString(1,art.getImagen());
+            stmt.setString(10,art.getImagen());
             
             stmt.executeUpdate();
             stmt.close();

@@ -359,7 +359,6 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -472,7 +471,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jPanelDatos" max="32767" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="jPanelTable" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPanelTable" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -489,7 +488,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" alignment="0" pref="924" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" pref="928" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -1155,6 +1154,9 @@
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Foto"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonFotoArtActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>

@@ -41,14 +41,16 @@ public class ArticuloDao {
      public boolean insert(Articulo art) {
         try {
             stmt = conexion.prepareStatement(QUERY_INSERT);
-            stmt.setString(1,art.getNombre());
-            stmt.setFloat(2,art.getPeso() );
-            stmt.setString(3,art.getTipo() );
-            stmt.setInt(4,art.getEstado() );
-            stmt.setFloat(5,art.getPrecio());
-            stmt.setFloat(6,art.getIva());
-            stmt.setString(7,art.getDescripcion());
-            stmt.setString(8,art.getOrigen());
+            stmt.setString(1,art.getIdArt());
+            stmt.setString(2,art.getNombre());
+            stmt.setFloat(3,art.getPeso() );
+            stmt.setString(4,art.getTipo() );
+            stmt.setInt(5,art.getEstados());
+            stmt.setFloat(6,art.getPrecio());
+            stmt.setFloat(7,art.getIva());
+            stmt.setString(8,art.getDescripcion());
+            stmt.setString(9,art.getOrigen());
+            stmt.setString(1,art.getImagen());
             
             stmt.executeUpdate();
             stmt.close();

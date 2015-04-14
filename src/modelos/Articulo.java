@@ -1,5 +1,5 @@
 package modelos;
-// Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1
+// Generated 14-abr-2015 21:45:23 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Articulo  implements java.io.Serializable {
 
 
-     private Integer idArt;
+     private String idArt;
      private int estado;
      private String nombre;
      private Float peso;
@@ -28,7 +28,8 @@ public class Articulo  implements java.io.Serializable {
     }
 
 	
-    public Articulo(int estado, String nombre, String tipo, float precio, float iva, String origen) {
+    public Articulo(String idArt, int estado, String nombre, String tipo, float precio, float iva, String origen) {
+        this.idArt = idArt;
         this.estado = estado;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -36,7 +37,8 @@ public class Articulo  implements java.io.Serializable {
         this.iva = iva;
         this.origen = origen;
     }
-    public Articulo(int estado, String nombre, Float peso, String tipo, float precio, float iva, String descripcion, String origen) {
+    public Articulo(String idArt, int estado, String nombre, Float peso, String tipo, float precio, float iva, String descripcion, String origen) {
+       this.idArt = idArt;
        this.estado = estado;
        this.nombre = nombre;
        this.peso = peso;
@@ -47,18 +49,18 @@ public class Articulo  implements java.io.Serializable {
        this.origen = origen;
     }
    
-    public Integer getIdArt() {
+    public String getIdArt() {
         return this.idArt;
     }
     
-    public void setIdArt(Integer idArt) {
+    public void setIdArt(String idArt) {
         this.idArt = idArt;
     }
-    public int getEstado() {
+    public int getEstados() {
         return this.estado;
     }
     
-    public void setEstados(int estado) {
+    public void setEstados(int estados) {
         this.estado = estado;
     }
     public String getNombre() {
@@ -117,6 +119,7 @@ public class Articulo  implements java.io.Serializable {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+   
 }
 
 

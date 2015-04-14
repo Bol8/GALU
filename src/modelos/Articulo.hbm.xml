@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-abr-2015 0:15:55 by Hibernate Tools 4.3.1 -->
+<!-- Generated 14-abr-2015 21:45:24 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="modelos.Articulo" table="articulo" catalog="galu" optimistic-lock="version">
-        <id name="idArt" type="java.lang.Integer">
-            <column name="idArt" />
-            <generator class="identity" />
+        <id name="idArt" type="string">
+            <column name="idArt" length="45" />
+            <generator class="assigned" />
         </id>
         <many-to-one name="estados" class="modelos.Estados" fetch="select">
             <column name="Estado" not-null="true" />
@@ -27,7 +27,7 @@
             <column name="IVA" precision="12" scale="0" not-null="true" />
         </property>
         <property name="descripcion" type="string">
-            <column name="Descripcion" length="100" />
+            <column name="Descripcion" length="200" />
         </property>
         <property name="origen" type="string">
             <column name="Origen" length="45" not-null="true" />
@@ -37,13 +37,13 @@
         </property>
         <set name="lineaPedidoPs" table="linea_pedido_p" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idArticulo" not-null="true" />
+                <column name="idArticulo" length="45" not-null="true" />
             </key>
             <one-to-many class="modelos.LineaPedidoP" />
         </set>
         <set name="lineaPedidoCs" table="linea_pedido_c" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="idArticulo" not-null="true" />
+                <column name="idArticulo" length="45" not-null="true" />
             </key>
             <one-to-many class="modelos.LineaPedidoC" />
         </set>

@@ -1,18 +1,23 @@
- package vistas;
+package vistas;
 
 import java.sql.Connection;
 import conexiones.DBConnection;
 import controladores.cArticulo;
 import java.awt.CardLayout;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import modelos.Articulo;
 import utilidades.JTableCellRenderer;
+import utilidades.gArchivo;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 
 /**
  *
@@ -20,15 +25,16 @@ import utilidades.JTableCellRenderer;
  */
 public class VentanaP extends javax.swing.JFrame {
 
-   private cArticulo cArt;
-    
-    
+    private cArticulo cArt;
+    private File dest;
+    private File source;
+
     public VentanaP() {
         initComponents();
         cArt = new cArticulo();
         Connection con = DBConnection.getConnection();
-         jTableListaArt.setDefaultRenderer(jTableListaArt.getColumnClass(WIDTH), new JTableCellRenderer());
-        
+        jTableListaArt.setDefaultRenderer(jTableListaArt.getColumnClass(WIDTH), new JTableCellRenderer());
+
     }
 
     /**
@@ -157,7 +163,6 @@ public class VentanaP extends javax.swing.JFrame {
         jMenuTraza = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jPanelPrincipal.setLayout(new java.awt.CardLayout());
 
@@ -242,7 +247,7 @@ public class VentanaP extends javax.swing.JFrame {
         jPanelTable.setLayout(jPanelTableLayout);
         jPanelTableLayout.setHorizontalGroup(
             jPanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
         );
         jPanelTableLayout.setVerticalGroup(
             jPanelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,7 +382,7 @@ public class VentanaP extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListaLayout.createSequentialGroup()
                 .addComponent(jPanelDatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanelTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanelTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelListaLayout.setVerticalGroup(
             jPanelListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,6 +545,11 @@ public class VentanaP extends javax.swing.JFrame {
         );
 
         jButtonFotoArt.setText("Foto");
+        jButtonFotoArt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFotoArtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelDatos1Layout = new javax.swing.GroupLayout(jPanelDatos1);
         jPanelDatos1.setLayout(jPanelDatos1Layout);
@@ -1224,7 +1234,7 @@ public class VentanaP extends javax.swing.JFrame {
 
     private void jMenuItemArticulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemArticulosActionPerformed
         cambiarCard(jPanelArticulos);
-        
+
     }//GEN-LAST:event_jMenuItemArticulosActionPerformed
 
     private void jMenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClientesActionPerformed
@@ -1232,39 +1242,76 @@ public class VentanaP extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemClientesActionPerformed
 
     private void jMenuItemProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProvActionPerformed
-       cambiarCard(jPanelProv);
+        cambiarCard(jPanelProv);
     }//GEN-LAST:event_jMenuItemProvActionPerformed
 
     private void jButtonSaveARtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveARtActionPerformed
-     if(cArt.insertArticulo( getDatosArticulo())){
-         System.out.println("Todo correcto");
-     }else{
-         System.out.println("Fallo");
-     }
+        if (cArt.insertArticulo(getDatosArticulo())) {
+            System.out.println("Todo correcto");
+        } else {
+            System.out.println("Fallo");
+        }
     }//GEN-LAST:event_jButtonSaveARtActionPerformed
 
-      private Articulo getDatosArticulo() {
-       
-          String nom = jTNomArt.getText();
-          float peso = Float.parseFloat(jTPesoArt.getText());
-          float precio = Float.parseFloat(jTPrecioArt.getText());
-         // float iva = Float.parseFloat(jComboIVAArt.getName());
-          float iva = 0.0F;
-          String descrp = jTextAreaDescArt.getText();
-          String origen = jTOrgArt.getText();
-        //  int estado = jComboEstadoArt.getSelectedIndex();
-          
-        Articulo art = new Articulo(1, nom, peso, "Empanada", precio, iva, descrp, origen);
-                  
-          return art;            
+    private void jButtonFotoArtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFotoArtActionPerformed
+        JFileChooser jfc = new JFileChooser();
+
+        jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        jfc.setDialogTitle("Elegir imagen de perfil");
+
+        int userSelection = jfc.showOpenDialog(this);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            source = jfc.getSelectedFile();
+            dest = new File("src/imagenes/" + source.getName());
+        }
+    }//GEN-LAST:event_jButtonFotoArtActionPerformed
+
+    private boolean guardarFoto() {
+
+        try {
+            if (!source.getName().isEmpty() && !dest.getName().isEmpty()) {
+                gArchivo.copiarArchivos(source, dest);
+            }
+        } catch (IOException ex) {
+            System.out.println("Se ha producido un error en añadir foto");
+            return false;
+        }
+
+        return true;
     }
-    private void cambiarCard(JPanel panel ){
+
+    private Articulo getDatosArticulo() {
+
+        String id = jTCodigoArt.getText();
+        String nom = jTNomArt.getText();
+        float peso = Float.parseFloat(jTPesoArt.getText());
+        String tipo = "";
+        int estado = 1;
+        float precio = Float.parseFloat(jTPrecioArt.getText());
+        // float iva = Float.parseFloat(jComboIVAArt.getName());
+        float iva = 0.0F;
+        String descrp = jTextAreaDescArt.getText();
+        String origen = jTOrgArt.getText();
+        //  int estado = jComboEstadoArt.getSelectedIndex();
+        
+        Articulo art = new Articulo(id, estado , nom, peso, tipo, precio, iva, descrp, origen);
+        
+         if (!source.getName().isEmpty() && !dest.getName().isEmpty()) {
+               art.setImagen(dest.getPath());
+               guardarFoto();
+            }
+
+        return art;
+    }
+
+    private void cambiarCard(JPanel panel) {
         jPanelPrincipal.removeAll();
         jPanelPrincipal.add(panel);
         jPanelPrincipal.repaint();
         jPanelPrincipal.revalidate();
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -1419,5 +1466,4 @@ public class VentanaP extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaDescArt;
     // End of variables declaration//GEN-END:variables
 
-  
 }

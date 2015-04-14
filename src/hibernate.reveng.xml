@@ -2,21 +2,21 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="galu"/>
+  <table-filter match-name="tarifa"/>
+  <table-filter match-name="linea_factura"/>
+  <table-filter match-name="contacto"/>
+  <table-filter match-name="pedido_p"/>
+  <table-filter match-name="empresa"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="proveedor"/>
+  <table-filter match-name="forma_pago"/>
   <table-filter match-name="articulo"/>
+  <table-filter match-name="linea_pedido_c"/>
+  <table-filter match-name="linea_pedido_p"/>
+  <table-filter match-name="albaran"/>
+  <table-filter match-name="pedido_c"/>
   <table-filter match-name="facturas"/>
   <table-filter match-name="estados"/>
-  <table-filter match-name="forma_pago"/>
-  <table-filter match-name="linea_pedido_p"/>
-  <table-filter match-name="empresa"/>
-  <table-filter match-name="pedido_c"/>
-  <table-filter match-name="albaran"/>
-  <table-filter match-name="tarifa"/>
-  <table-filter match-name="cliente"/>
-  <table-filter match-name="pedido_p"/>
-  <table-filter match-name="proveedor"/>
-  <table-filter match-name="estado_ped"/>
-  <table-filter match-name="linea_pedido_c"/>
-  <table-filter match-name="contacto"/>
-  <table-filter match-name="linea_factura"/>
   <table-filter match-name="iva"/>
+  <table-filter match-name="estado_ped"/>
 </hibernate-reverse-engineering>
